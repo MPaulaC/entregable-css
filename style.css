@@ -1,18 +1,14 @@
-image {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins',sans-serif;
-}
 
-body{
-    background-color:lightblue;
+body {
+    background-color: lightblue;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
 }
-.container{
+
+.container {
     position: relative;
     width: 100%;
     max-width: 1000px;
@@ -21,40 +17,44 @@ body{
     margin: 50px;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    box-shadow: 0 35px 55px rgba(0,0,0,0.1);
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
 }
-.container .left_side{
+
+/* Estilos del lado izquierdo */
+.container .left_side {
     position: relative;
     background: #003147;
     padding: 40px;
-
+    color: #fff;
 }
-.profileText{
+
+.profileText {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.profileText .imgBx{
+
+.profileText .imgBx {
     position: relative;
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    overflow: hidden ;
+    overflow: hidden;
 }
-.profileText .imgBx img{
+
+.profileText .imgBx img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 150%;
+    height: 100%;
     object-fit: cover;
 }
-.profileText h1 {
-    color: #fff;
 
+.profileText h1 {
     font-size: 1.5em;
     margin-top: 20px;
     text-transform: uppercase;
@@ -62,35 +62,77 @@ body{
     font-weight: 600;
     line-height: 1.4em;
 }
-.contactInfo{
+
+.contactInfo {
     padding-top: 40px;
 }
-.title{
-    color: #fff;
-    text-transform: uppercase;
+
+.title {
+    font-size: 1.2em;
     font-weight: 600;
-    letter-spacing: 1px;
     margin-bottom: 20px;
 }
-.contactInfo ul{
-    position: relative;
 
-}
-.contactInfo ul li{
+.contactInfo ul {
     list-style: none;
-    position: relative;
-    margin: 10px 0;
-    cursor: pointer;
+    padding: 0;
 }
-.contactInfo ul li{
+
+.contactInfo ul li {
+    margin-bottom: 10px;
+}
+
+.contactInfo ul li .icon {
     display: inline-block;
     width: 30px;
     font-size: 18px;
     color: #03a9f4;
+    margin-right: 10px;
 }
-.container .rigth_side{
+
+.contactInfo ul li .text {
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* Estilos del lado derecho */
+.container .right_side {
     position: relative;
     background: #fff;
     padding: 40px;
+    color: #333;
+}
 
+.right_side h2 {
+    position: relative;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* Animación  títulos */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 200%;
+    }
+}
+
+.right_side h2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right,
+            #03a9f4,
+            #9c27b0,
+            #03a9f4);
+    
+    background-size: 200% 2px;
+    animation: gradientAnimation 2s linear infinite;
 }
