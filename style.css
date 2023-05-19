@@ -1,0 +1,138 @@
+
+body {
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background-color: aliceblue;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos del lado izquierdo */
+.container .left_side {
+    position: relative;
+    background: #003147;
+    padding: 40px;
+    color: #fff;
+}
+
+.profileText {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profileText .imgBx {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profileText .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profileText h1 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4em;
+}
+
+.contactInfo {
+    padding-top: 40px;
+}
+
+.title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.contactInfo ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contactInfo ul li {
+    margin-bottom: 10px;
+}
+
+.contactInfo ul li .icon {
+    display: inline-block;
+    width: 30px;
+    font-size: 18px;
+    color: #03a9f4;
+    margin-right: 10px;
+}
+
+.contactInfo ul li .text {
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* Estilos del lado derecho */
+.container .right_side {
+    position: relative;
+    background: #fff;
+    padding: 40px;
+    color: #333;
+}
+
+.right_side h2 {
+    position: relative;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* Animación  títulos */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 200%;
+    }
+}
+
+.right_side h2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right,
+            #03a9f4,
+            #9c27b0,
+            #03a9f4);
+    
+    background-size: 200% 2px;
+    animation: gradientAnimation 2s linear infinite;
+}
